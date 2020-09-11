@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>linux文夹与文件的rwx | 厉增伟博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="linux 文件系统的权限管理是最基础的内容，看过很多次，但是很容易忘记。这次把自己的理解用生动的形式记录下来。文件夹和文件的权限是不一样的。 对于文件夹而言： r 4,  看。把文件夹想象成一个房间，里面有文件和其它房间，r 表示你只能站在门口看，不能进去，只能看都内部房间的轮廓。想看内部房间的东西要先进外面的房间，也就是说想看一个房间的东西就要站在它的门口。 w 2, 改变。改变文件夹的结构，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux文夹与文件的rwx">
+<meta property="og:url" content="https://tt12t.com/2019/07/11/linux%E6%96%87%E5%A4%B9%E4%B8%8E%E6%96%87%E4%BB%B6%E7%9A%84rwx/index.html">
+<meta property="og:site_name" content="厉增伟博客">
+<meta property="og:description" content="linux 文件系统的权限管理是最基础的内容，看过很多次，但是很容易忘记。这次把自己的理解用生动的形式记录下来。文件夹和文件的权限是不一样的。 对于文件夹而言： r 4,  看。把文件夹想象成一个房间，里面有文件和其它房间，r 表示你只能站在门口看，不能进去，只能看都内部房间的轮廓。想看内部房间的东西要先进外面的房间，也就是说想看一个房间的东西就要站在它的门口。 w 2, 改变。改变文件夹的结构，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-07-11T03:23:42.000Z">
+<meta property="article:modified_time" content="2020-09-11T12:08:53.950Z">
+<meta property="article:author" content="厉增伟">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="厉增伟博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">厉增伟博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tt12t.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux文夹与文件的rwx" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/11/linux%E6%96%87%E5%A4%B9%E4%B8%8E%E6%96%87%E4%BB%B6%E7%9A%84rwx/" class="article-date">
+  <time datetime="2019-07-11T03:23:42.000Z" itemprop="datePublished">2019-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux文夹与文件的rwx
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>linux 文件系统的权限管理是最基础的内容，看过很多次，但是很容易忘记。这次把自己的理解用生动的形式记录下来。<br>文件夹和文件的权限是不一样的。</p>
+<h5 id="对于文件夹而言："><a href="#对于文件夹而言：" class="headerlink" title="对于文件夹而言："></a>对于文件夹而言：</h5><ul>
+<li>r 4,  看。把文件夹想象成一个房间，里面有文件和其它房间，r 表示你只能站在门口看，不能进去，只能看都内部房间的轮廓。想看内部房间的东西要先进外面的房间，也就是说想看一个房间的东西就要站在它的门口。</li>
+<li>w 2, 改变。改变文件夹的结构，删里面的东西，改名子，添加东西，有装修的能力。但是要想装修也要先进去，其影响的就是 <code>ls</code> 结果。</li>
+<li>x 1，进入。进入房间，进去之后如果有装修的能用就可以使用了，也可以站在内部房间的门口了。</li>
+</ul>
+<h5 id="对于文件而言-相对简单"><a href="#对于文件而言-相对简单" class="headerlink" title="对于文件而言 (相对简单)"></a>对于文件而言 (相对简单)</h5><ul>
+<li>r 4, 看。读文件的内容，可以用 <code>vim</code>, <code>cat</code> 看</li>
+<li>w 2，写。编辑里面的内容</li>
+<li>x 1，执行。当成命令来执行</li>
+<li>文件的重命名和删除由其文件夹的 <code>w</code>来决定</li>
+</ul>
+<h4 id="umask-是用于配置默认权限的"><a href="#umask-是用于配置默认权限的" class="headerlink" title="umask 是用于配置默认权限的"></a>umask 是用于配置默认权限的</h4><p>它的值是掩码， umask 022 会指导生成 755 的文件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tt12t.com/2019/07/11/linux%E6%96%87%E5%A4%B9%E4%B8%8E%E6%96%87%E4%BB%B6%E7%9A%84rwx/" data-id="ckey76hsz0004b2qoahg08zkc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/07/16/vsftp%E9%83%A8%E7%BD%B2%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vsftp部署笔记整理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/27/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%AB%98%E8%B4%A8%E9%87%8F%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">学习与高质量问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%AF%E6%B7%A1/" rel="tag">扯淡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" rel="tag">网络协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" rel="tag">读后感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E6%89%AF%E6%B7%A1/" style="font-size: 10px;">扯淡</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">技巧</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 15px;">网络协议</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 20px;">读后感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/11/%E6%96%B0%E5%8D%9A%E5%AE%A2/">新博客</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/11/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/14/linux%E7%94%A8%E8%BF%87%E7%9A%84%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/">linux用过的命令总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/28/hostOnly-and-nat/">VirtualBox 虚拟机的 HostOnly 与 NAT 模式的原理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/28/%E7%BC%96%E7%A8%8B%E5%91%BD%E5%90%8D%E6%8A%80%E5%B7%A7/">编程命名技巧</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 厉增伟<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

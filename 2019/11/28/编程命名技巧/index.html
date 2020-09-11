@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>编程命名技巧 | 厉增伟博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在网络上看过这样的说法，命名对于大神们是一件很棘手的事情。我想原因就在于他们很流行命名这个事情。回忆一下我的代码，没怎么为命名这件事话太多心思，看来看去就那么几天单词用来用去，词汇量的贫乏是原因之一。这篇博客用于总结命名的经验，养成准确易懂的命名习惯。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编程命名技巧">
+<meta property="og:url" content="https://tt12t.com/2019/11/28/%E7%BC%96%E7%A8%8B%E5%91%BD%E5%90%8D%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:site_name" content="厉增伟博客">
+<meta property="og:description" content="在网络上看过这样的说法，命名对于大神们是一件很棘手的事情。我想原因就在于他们很流行命名这个事情。回忆一下我的代码，没怎么为命名这件事话太多心思，看来看去就那么几天单词用来用去，词汇量的贫乏是原因之一。这篇博客用于总结命名的经验，养成准确易懂的命名习惯。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-28T02:11:35.000Z">
+<meta property="article:modified_time" content="2020-09-11T12:08:53.950Z">
+<meta property="article:author" content="厉增伟">
+<meta property="article:tag" content="技巧">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="厉增伟博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">厉增伟博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tt12t.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-编程命名技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/28/%E7%BC%96%E7%A8%8B%E5%91%BD%E5%90%8D%E6%8A%80%E5%B7%A7/" class="article-date">
+  <time datetime="2019-11-28T02:11:35.000Z" itemprop="datePublished">2019-11-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      编程命名技巧
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在网络上看过这样的说法，命名对于大神们是一件很棘手的事情。我想原因就在于他们很流行命名这个事情。回忆一下我的代码，没怎么为命名这件事话太多心思，看来看去就那么几天单词用来用去，词汇量的贫乏是原因之一。这篇博客用于总结命名的经验，养成准确易懂的命名习惯。</p>
+<a id="more"></a>
+
+<p>在阅读源码的过程中可以持续总结</p>
+<p>以下内容总结自 <a target="_blank" rel="noopener" href="https://github.com/biezhi/write-readable-code/tree/master/src/main/java/chapter_03">魔王不造反</a></p>
+<h2 id="用更有表现力的词进行替换"><a href="#用更有表现力的词进行替换" class="headerlink" title="用更有表现力的词进行替换"></a>用更有表现力的词进行替换</h2><ul>
+<li>send<ul>
+<li>deliver 交付，传递。有完成任务，递交成品的感觉，地位平等，面向个体</li>
+<li>dispatch  派遣, 分发任务，有居高临下的感觉</li>
+<li>announce 宣布，表达结果，有居高临下的感觉</li>
+<li>distribute  分东西，面向大众</li>
+<li>route 路线，选择道路</li>
+</ul>
+</li>
+<li>find<ul>
+<li>search 更高级，如搜索引擎，复杂操作</li>
+<li>extract 提取，在一堆混合的东西里，分离具有某一特征的东西</li>
+<li>locate 定位，找到位置，像是和索引相关</li>
+<li>recover 回收，把在外的东西拿回来，隐藏掉</li>
+</ul>
+</li>
+<li>start<ul>
+<li>launch 启动工程，发射火箭，声势浩大</li>
+<li>create 创造，从无到有</li>
+<li>begin 开始做事，新的，初次</li>
+<li>open 打开开关，发射火箭，打开氧气</li>
+</ul>
+</li>
+<li>make <ul>
+<li>create 创造</li>
+<li>set up 配置什么东西</li>
+<li>build 一个不会动的实物</li>
+<li>generate 利用工具做</li>
+<li>compose 指挥，对象是 buiid 的人</li>
+<li>add 在现有的数量上加</li>
+<li>new 感觉不到和 create 的区别，强调新？</li>
+</ul>
+</li>
+</ul>
+<h2 id="命名带单位，量词后面都接上单位"><a href="#命名带单位，量词后面都接上单位" class="headerlink" title="命名带单位，量词后面都接上单位"></a>命名带单位，量词后面都接上单位</h2><ul>
+<li>Secs</li>
+<li>MB,KB</li>
+<li>CM</li>
+<li>Mins</li>
+<li>Hours</li>
+<li>Days,Months,Years</li>
+<li>Numbers</li>
+</ul>
+<h2 id="对有歧义理解的词加特征修饰"><a href="#对有歧义理解的词加特征修饰" class="headerlink" title="对有歧义理解的词加特征修饰"></a>对有歧义理解的词加特征修饰</h2><ul>
+<li>password -&gt; planPassword</li>
+<li>comment  -&gt; unescatedComment</li>
+<li>html     -&gt; htmlUtf8</li>
+<li>data     -&gt; dateUrlEncode</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tt12t.com/2019/11/28/%E7%BC%96%E7%A8%8B%E5%91%BD%E5%90%8D%E6%8A%80%E5%B7%A7/" data-id="ckey76ht9000lb2qo06yj9pam" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/11/28/hostOnly-and-nat/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          VirtualBox 虚拟机的 HostOnly 与 NAT 模式的原理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/27/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">网络协议学习总结（一）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%AF%E6%B7%A1/" rel="tag">扯淡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag">技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" rel="tag">网络协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" rel="tag">读后感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E6%89%AF%E6%B7%A1/" style="font-size: 10px;">扯淡</a> <a href="/tags/%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">技巧</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 15px;">网络协议</a> <a href="/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" style="font-size: 20px;">读后感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/11/%E6%96%B0%E5%8D%9A%E5%AE%A2/">新博客</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/11/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/14/linux%E7%94%A8%E8%BF%87%E7%9A%84%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/">linux用过的命令总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/28/hostOnly-and-nat/">VirtualBox 虚拟机的 HostOnly 与 NAT 模式的原理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/28/%E7%BC%96%E7%A8%8B%E5%91%BD%E5%90%8D%E6%8A%80%E5%B7%A7/">编程命名技巧</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 厉增伟<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
